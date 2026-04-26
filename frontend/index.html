@@ -14,7 +14,7 @@
 
       <label class="field">
         <span>テキスト（会話履歴など）</span>
-        <textarea id="text-input" rows="18" placeholder="解析したい日本語テキストを貼り付けてください"></textarea>
+        <textarea id="text-input" rows="16" placeholder="解析したい日本語テキストを貼り付けてください"></textarea>
       </label>
 
       <div class="params">
@@ -32,7 +32,10 @@
         </label>
       </div>
 
-      <button id="analyze-btn" type="button">解析する</button>
+      <div class="actions">
+        <button id="analyze-btn" type="button">解析する</button>
+        <button id="ai-analyze-btn" type="button" disabled>AI解析</button>
+      </div>
 
       <div id="status" class="status"></div>
       <div id="stats" class="stats"></div>
@@ -46,6 +49,14 @@
         <button type="button" id="zoom-out" title="縮小">−</button>
         <button type="button" id="zoom-reset" title="全体表示">⤢</button>
       </div>
+
+      <aside id="ai-panel" class="ai-panel" hidden>
+        <header class="ai-panel__header">
+          <h2>AI分析</h2>
+          <button type="button" id="ai-close" title="閉じる">×</button>
+        </header>
+        <div id="ai-content" class="ai-panel__content"></div>
+      </aside>
     </main>
   </div>
 
