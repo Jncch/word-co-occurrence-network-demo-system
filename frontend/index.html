@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>共起ネットワーク デモ</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="panel-left">
+      <h1>共起ネットワーク</h1>
+
+      <label class="field">
+        <span>テキスト（会話履歴など）</span>
+        <textarea id="text-input" rows="18" placeholder="解析したい日本語テキストを貼り付けてください"></textarea>
+      </label>
+
+      <div class="params">
+        <label class="field-inline">
+          <span>窓サイズ</span>
+          <input id="window-size" type="number" min="1" max="50" value="10" />
+        </label>
+        <label class="field-inline">
+          <span>最小出現頻度</span>
+          <input id="min-freq" type="number" min="1" max="20" value="2" />
+        </label>
+        <label class="field-inline">
+          <span>最小共起頻度</span>
+          <input id="min-cooc" type="number" min="1" max="20" value="2" />
+        </label>
+      </div>
+
+      <button id="analyze-btn" type="button">解析する</button>
+
+      <div id="status" class="status"></div>
+      <div id="stats" class="stats"></div>
+    </aside>
+
+    <main class="panel-right">
+      <div id="network"></div>
+      <div id="overlay" hidden></div>
+      <div class="zoom-controls" id="zoom-controls" hidden>
+        <button type="button" id="zoom-in" title="拡大">+</button>
+        <button type="button" id="zoom-out" title="縮小">−</button>
+        <button type="button" id="zoom-reset" title="全体表示">⤢</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
